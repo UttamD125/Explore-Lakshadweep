@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header" style="height: fit-content; background-image: none; box-shadow: 1px 1px 11px rgba(0, 0, 0, 0.377);">
+        <div id="navbar_whole">
+            <div class="nav_logo">
+                <a id="nav_icon" href="/"></a>
+                <ul>
+                    <a href="/" id="nav_title">Explore Lakshadweep</a><br>
+                    <a href="/" id="nav_slogan">Chill By The Shore, Forevermore . . . .</a>
+                </ul>
+            </div>
+            <div class="nav_buttons">
+                <ul>
+                    <li style="padding: 0 0.7vw; width: fit-content;"><a style="padding: 0 0.7vw; width: fit-content;"href="/packagestatus" id="nav_package"><img class="nav_buttons_icon" src="/media/icons/4.png" alt="packages">Packages Status</a></li>
+                    <li style="padding: 0 0.7vw; width: fit-content;"><a style="padding: 0 0.7vw; width: fit-content;"href="/flightsstatus" id="nav_flight"><img class="nav_buttons_icon" src="/media/icons/flights_ticket.png" alt="Flights">Flights Status</a></li>
+                    <li style="padding: 0 0.7vw; width: fit-content;"><a style="padding: 0 0.7vw; width: fit-content;"href="/cruisestatus" id="nav_cruise"><img class="nav_buttons_icon" src="/media/icons/cruise_ticket.png" alt="cruise">Cruise Status</a></li>
+                </ul>
+            </div>
+            <a href="/logout"><button id="logout-btn">Logout</button></a>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-container">
+            <!-- Profile Picture -->
+            <div class="profile-pic">
+                <img id="profile-image" src="<%= profileImage %>" alt="Profile Picture">
+            </div>            
+
+            <!-- Upload Profile Picture Button -->
+            <input type="file" id="upload-photo" style="display: none;">
+            <button id="choose-photo-btn">Choose Image</button>
+
+            <!-- Username Greeting -->
+            <h2 id="greeting" style="font-family: lato;">Hi,</h2>
+        </div>
+    </section>
+
+    <section class="bookings-section">
+        <h3>Your Package Bookings</h3>
+    
+        <% if (packageBookings && packageBookings.length > 0) { %>
+            <div class="bookings-list">
+                <% packageBookings.forEach(function(booking) { %>
+                    <div class="booking-item">
+                        <p><strong>Package Name:</strong> <%= booking.packageName %></p>
+                        <p><strong>Number of Persons:</strong> <%= booking.numberOfPersons %></p>
+                        <p><strong>Preferred Date:</strong> <%= new Date(booking.preferredDate).toLocaleDateString() %></p>
+                        <p><strong>Total Price:</strong> ₹<%= booking.totalPrice.toLocaleString() %></p>
+                        <p><strong>Status:</strong> 
+                            <span class="status <%= booking.status.toLowerCase() %>">
+                                <%= booking.status || 'Pending' %>
+                            </span>
+                        </p>
+                        <!-- Delete button -->
+                        <form action="/deletePackageBooking" method="POST" style="display:inline;">
+                            <input type="hidden" name="bookingId" value="<%= booking._id %>">
+                            <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this booking?');">Delete</button>
+                        </form>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <p style="padding-top: 11px; color: #6d6d6d;">No package bookings found.</p>
+        <% } %>
+    </section>
+    <style>
+        .status.approved {
+            color: green;
+        }
+    
+        .status.rejected {
+            color: red;
+        }
+    
+        .status.pending {
+            color: orange;
+        }
+    
+        .bookings-section {
+            position: relative;
+            padding: 11px;
+            left: 41vw;
+            top: -45vw;
+            width: 55vw;
+        }
+    
+        .bookings-list {
+            margin-top: 20px;
+            width: 100%;
+        }
+    
+        .booking-item {
+            background: #ffffff;
+            border: 2px solid #ccc;
+            border-radius: 0.5vw;
+            padding: 15px;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+    
+        .booking-item p {
+            margin: 5px 0;
+            font-size: 0.9vw;
+        }
+    
+        .booking-item strong {
+            color: #4c4c4c;
+            font-size: 1vw;
+        }
+    
+        .booking-item span {
+            font-weight: bold;
+        }
+    
+        .delete-btn {
+            background-color: #9f0000;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+    
+        .delete-btn:hover {
+            background-color: #e60000;
+        }
+    
+        .delete-btn:active {
+            background-color: #b30000;
+        }
+    </style>
+
+    <script src="js/main.js"></script>
+
+    
+    <script>
+        // Handle the profile image change
+        document.getElementById('choose-photo-btn').addEventListener('click', () => {
+            document.getElementById('upload-photo').click();
+        });
+
+        document.getElementById('upload-photo').addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const formData = new FormData();
+                formData.append('profileImage', file);
+
+                // Send the image to the server
+                fetch('/upload-profile-image', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update the profile image
+                        document.getElementById('profile-image').src = data.profileImage;
+                        alert('Profile image updated successfully');
+                    } else {
+                        alert('Error updating profile image');
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('Error uploading profile image');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

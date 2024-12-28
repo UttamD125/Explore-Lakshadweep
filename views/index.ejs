@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Lakshadweep</title>
+    <link rel="icon" href="/media/icons/L_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js"></script>
+</head>
+<body>
+    
+    <!-- index body -->
+    <div class="index_body" id="blur">
+
+         <!-- header -->
+        <header class="header">
+            <div id="navbar_whole">
+                <div class="nav_logo">
+                    <a id="nav_icon" href="/"></a>
+                    <ul>
+                        <a href="/" id="nav_title">Explore Lakshadweep</a><br>
+                        <a href="/" id="nav_slogan">Chill By The Shore, Forevermore . . . .</a>
+                    </ul>
+                </div>
+                <div class="nav_buttons">
+                    <ul>
+                        <li><a href="/islands" id="nav_island"><img class="nav_buttons_icon" src="/media/icons/island_icon.png"  alt="islands">Islands</a>
+                            <ul class="dropdown">
+                                <li><a class="nav_dropdown_border rborder" id="Agatti_border" href="/islands#agatti_title">Agatti</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#amini_title">Amini</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#andrott_title">Andrott</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#bangaram_title">Bangaram</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#bitra_title">Bitra</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#chetlat_title">Chetlat</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#kadmat_title">Kadamat</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#kalpeni_title">Kalpeni</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#kavaratti_title">Kavaratti</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#kiltan_title">Kiltan</a></li>
+                                <li><a href="/islands#minicoy_title">Minicoy</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/package" id="nav_package"><img class="nav_buttons_icon" src="/media/icons/package_icon.png" alt="packages">Packages</a></li>
+                        <li><a href="/flights" id="nav_flight"><img class="nav_buttons_icon" src="/media/icons/plane_icon.png" alt="Flights">Flights</a></li>
+                        <li><a href="/cruise" id="nav_cruise"><img class="nav_buttons_icon" src="/media/icons/cruise_icon.png" alt="cruise">Cruise</a></li>
+                    </ul>
+                </div>
+                <a href="/profile"><img id="profile_id" class="profile" src="<%= profileImage %>" alt="Profile"/></a>
+            </div>
+        </header>
+
+        <div class="overall_index_body">
+            
+            <!-- index info div -->
+            <div class="index_info_body1">
+                <img class="index_info_body1 reveal_right" src="/media/images/index_image.png" alt="">
+                <div class="reveal" id="lakshadweep_info" class="reveal_left" style="font-family:lato">
+                    <p>Lakshadweep means 'one hundred thousand islands' in Sanskrit. Lakshadweep is also called Laccadive Islands and world famous for is its coral reef, exotic and sun-kissed beaches along with lush green landscape making it untouched beauty to explore 4200 square kilometers of lagoon which is so rich in marine wealth spread over 36 islands.
+                    </p>
+                    <div id="turtle_info">
+                        <img class="reveal_left" src="/media/images/sea_turtle.png" alt="sea_turtle">
+                        <p class="reveal" style="font-family: lato;">
+                            Lakshadweep is one of the few regions in India that supports a healthy foraging and nesting grounds for green turtles and hawksbills in Indian waters.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .index_info_body1{
+                    position: relative;
+                    height: 55vw;
+                    width: 100%;
+                    background-size: cover;
+                    background-position: bottom;
+                    #lakshadweep_info{
+                        height: 51vw;
+                        width: 45vw;
+                        position: relative;
+                        top: -51vw;
+                        left: 4vw;
+                        letter-spacing: 0.01vw;
+                        z-index: 99;
+                    }
+                    #lakshadweep_info p{
+                        position: relative;
+                        top: 8vw;
+                        color: rgb(0, 0, 0,0.81);
+                        text-align: left;
+                        font-size: 1.4vmax;
+                        font-weight: 370;
+                        line-height: 3vw;
+                    }
+                    #turtle_info{
+                        position: relative;
+                        display: flex;
+                        gap: 1vw;
+                        top: 4vw;
+                    }
+                    #turtle_info p{
+                        height: 19vw;
+                        position: relative;
+                        top: 9vw;
+                        padding-top: 2.1vw;
+                        padding-left: 2vw;
+                        color: rgb(0, 0, 0,0.81);
+                        text-align:justify;
+                        font-size: 1.4vmax;
+                        font-weight: 370;
+                        line-height: 3vw;
+                        border-left: 2px solid rgb(199, 199, 199);
+                    }
+                    #turtle_info img{
+                        position: relative;
+                        top: 8vw;
+                        height: 21vw;
+                    }
+                }
+            </style>
+
+            <!-- index video -->
+            <div id="index_video">
+                <p class="reveal" id="video_txt1" style="font-family: Montserrat_Italic;">The Islands of the</p>
+                <p class="reveal" id="video_txt2" style="font-family: Silk_Serif;">Lakshadweep</p>
+                <p class="reveal" id="video_txt3" style="font-family: Montserrat_Italic;">Chill by the shore, forevermore . . . .</p>
+                <img class="reveal_left" id="lakshadweep_logo" src="/media/icons/islands3.png" alt="design">
+                <video id="F_video" class="reveal" autoplay muted loop src="/media/videos/Lakshadweep_video.mp4"></video>
+            </div>
+            <style>
+                
+            </style>
+
+            <!-- index culture slider -->
+            <div id="index_img_slider1" class="reveal">
+                <div class="slide_caption" style="font-family: Silk_Serif;"><pre>RICH CULTURE OF LAKSHADWEEP</pre>
+                </div>
+                <div id="culture_slider">
+                    <input type="radio" class="culture_slider_radio" name="imge" id="rad1" checked>
+                    <input type="radio" class="culture_slider_radio" name="imge" id="rad2">
+                    <input type="radio" class="culture_slider_radio" name="imge" id="rad3">
+                    <input type="radio" class="culture_slider_radio" name="imge" id="rad4">
+
+                    <div class="culture_slide" id="traditional_dance">
+                        <p class="slider1_para" style="font-family: Silk_Serif;">Kolkali and Parichakali are the two popular folk art forms in the Territory. They are an integral part of the cultural milieu except in Minicoy where “LAVA” is the most popular dance form.</p>
+                        <img src="/media/images/traditional_dance.png" alt="traditional dance">
+                    </div>
+                    <div class="culture_slide" id="festivals">
+                        <p class="slider1_para" style="font-family: Silk_Serif;">National Minicoy Fest, an annual event organized by the Department of Tourism, is an opportunity for the islanders to showcase the rich tradition and culture of Lakshadweep in general and the unique culture of Minicoy Island in particular.</p>
+                        <img src="/media/images/festivals_image.png" alt="festival">
+                    </div>
+                    <div class="culture_slide" id="art">
+                        <p class="slider1_para" style="font-family: Silk_Serif;">There are abundant handicrafts made of corals, shells & oysters, which are skilfully crafted by the locals and used in decorative items and jewellery.</p>
+                        <img src="/media/images/art_image.png" alt="art & occupation" >
+                    </div>
+                    <div class="culture_slide" id="modiji_frame">
+                        <p class="slider1_para" style="font-family: Silk_Serif;">The traditional dress of Lakshadweep reflects the cultural heritage and lifestyle of its people.</p>
+                        <img src="/media/images/modiji.png" alt="cultural outfits">
+                    </div>
+                    <div class="dots">
+                        <label for="rad1" id="lbl1"></label>
+                        <label for="rad2" id="lbl2"></label>
+                        <label for="rad3" id="lbl3"></label>
+                        <label for="rad4" id="lbl4"></label>
+                    </div>
+                </div>
+            </div>
+            <style>
+                #index_img_slider1{
+                    height: 57vw;
+                    width: 100%;
+                    top: -1vw;
+                    position: relative;
+                    z-index: 99;
+
+                    #culture_slider{
+                        position: relative;
+                        top: -9.5vw;
+                        left: 6vw;
+                        width: 91vw;
+                    }
+                    .slide_caption{
+                        width: 37vw;
+                        font-size: 1.9vw;
+                        font-weight: 800;
+                        color: rgb(129, 129, 129);
+                        position: relative;
+                        left: 20%;
+                        top: 3vw;
+                        text-align: center;
+                        letter-spacing: 0.2vw;
+                        z-index: 99;
+                    }
+                    #traditional_dance p{
+                        position: relative;
+                        font-size: 1.1vw;
+                        color: rgb(129, 129, 129);
+                        height: 11vw;
+                        width: 21vw;
+                        top: 44vw;
+                        left: 52vw;
+                        text-align: center;
+                        z-index: 99;
+                    }
+                    #festivals p{
+                        position: relative;
+                        font-size: 1.1vw;
+                        color: rgb(129, 129, 129);
+                        height: 11vw;
+                        width: 21vw;
+                        top: 43.5vw;
+                        left: 52vw;
+                        text-align: center;
+                        z-index: 99;
+                    }
+                    #art p{
+                        position: relative;
+                        font-size: 1.3vw;
+                        color: rgb(129, 129, 129);
+                        height: 11vw;
+                        width: 21vw;
+                        top: 44vw;
+                        left: 52vw;
+                        text-align: center;
+                        z-index: 99;
+                    }
+                    #modiji_frame p{
+                        position: relative;
+                        font-size: 1.3vw;
+                        color: rgb(129, 129, 129);
+                        height: 11vw;
+                        width: 21vw;
+                        top: 45vw;
+                        left: 52vw;
+                        text-align: center;
+                        z-index: 99;
+                    }
+
+                    .culture_slide{
+                        position: absolute;
+                        opacity: 0;
+                    }
+                    .culture_slide img{
+                        position: relative;
+                        left: 5vw;
+                        transform: scale(0.9);
+                        transition: 1.1s;
+                        width: 91%;
+                    }
+                    .dots{
+                        width: 100%;
+                        position: absolute;
+                        top: 52.8vw;
+                        left: -4vw;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .dots label{
+                        position: relative;
+                        width: 0.75vw;
+                        height: 0.8vw;
+                        background-color: #cdcccc;
+                        margin: 0 0.7vw;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: 0.2s ease-in-out;
+                    }
+                    .dots label:hover{
+                        background-color:rgb(41, 215, 246);
+                    }
+                    #rad1:checked ~ #traditional_dance,
+                    #rad2:checked ~ #festivals,
+                    #rad3:checked ~ #art,
+                    #rad4:checked ~ #modiji_frame{
+                        opacity: 1;
+                    }
+                    #rad1:checked ~ #traditional_dance img,
+                    #rad2:checked ~ #festivals img,
+                    #rad3:checked ~ #art img,
+                    #rad4:checked ~ #modiji_frame img{
+                        transform:scale(1);
+                    }
+                    #rad1:checked ~ #traditional_dance p,
+                    #rad2:checked ~ #festivals p,
+                    #rad3:checked ~ #art p,
+                    #rad4:checked ~ #modiji_frame p{
+                        transform:scale(1);
+                    }
+                    #rad1:checked ~ .dots #lbl1,
+                    #rad2:checked ~ .dots #lbl2,
+                    #rad3:checked ~ .dots #lbl3,
+                    #rad4:checked ~ .dots #lbl4{
+                        background:rgb(41, 215, 246);
+                    }
+                    .culture_slider_radio{
+                        display: none;
+                    }
+                }
+            </style>
+
+            <!-- index info div 2 -->
+            <div id="index_info_body2" class="reveal">
+                <p id="info2_geo">Geography</p>
+                <p id="info2_paragraph" style="font-family: lato;">India's smallest Union Territory Lakshadweep is an archipelago consisting of 36 islands with an area of 32 sq km. It is a uni-district Union Territory and comprises of 12 atolls, three reefs, five submerged banks and ten inhabited islands. The islands have a total area of 32 sq km. The capital is Kavaratti and it is also the principal town of the UT. All Islands are 220 to 440 km away from the coastal city of Kochi in Kerala, in the emerald Arabian Sea. The natural landscapes, the sandy beaches, abundance of flora and fauna and the absence of a rushed lifestyle enhance the mystique of Lakshadweep.</p>
+            </div>
+            <style>
+                #index_info_body2{
+                    position: relative;
+                    left: 8vw;
+                    height: 47vw;
+                    width: 85%;
+                    margin-top: -3vw;
+                    margin-bottom: 5vw;
+                    background-image: url(/media/images/beach_image.png);
+                    background-size: cover;
+                    background-position: bottom;
+                }
+                #info2_geo{
+                    height: 3vw;
+                    width: 40vw;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    left: 2vw;
+                    top: 7.5vw;
+                    padding: 0.3vw;
+                    text-transform:uppercase;
+                    background-color: rgba(255, 255, 255, 0.51);
+                    font-size: 1.9vw;
+                    font-weight: 500;
+                    color: rgb(129, 129, 129);
+                    border-radius: 11px 11px 11px 11px;
+                }
+                #info2_paragraph{
+                    height: auto;
+                    width: 40vw;
+                    position: relative;
+                    text-align: justify;
+                    left: 2vw;
+                    top: 10.5vw;
+                    padding: 2vw;
+                    background-color: rgba(255, 255, 255, 0.51);
+                    font-size: 1.5vw;
+                    color: rgb(129, 129, 129);
+                    border-radius: 51px 0 51px 0;
+                }
+            </style>
+
+            <!-- index things to do slider -->
+            <div class="index_img_slider2 reveal" id="slides2">
+                <div class="ttdo_slider">
+                    <input type="radio" class="radio1" name="ie" id="ra1" checked>
+                    <input type="radio" class="radio1" name="ie" id="ra2">
+                    <input type="radio" class="radio1" name="ie" id="ra3">
+                    <input type="radio" class="radio1" name="ie" id="ra4">
+
+                    <div class="ttdo_slide " id="snorkelling">
+                        <p class="slider2_things_txt" style="font-family: Montserrat_Italic">
+                        Things to do
+                        </p>
+                        <p class="slider2_txt" id="snorkelling_txt" style="font-family: Silk_Serif;">
+                        SNORKELLING
+                        </p>
+                        <p class="slider2_para" id="snorkelling_para" style="font-family: lato;">For those who love the ocean and are passionate about discovering its creatures, snorkeling can serve as a source of inspiration and express appreciation towards the beauty and wonder that it has to offer. The snorkeling activity is mainly concentrated on the Bangaram and the Kadamat islands in lakshadweep.
+                        </p>
+                        <div class="img_wrap">
+                            <img class="small_img" id="snorkelling1_img" src="/media/images/Snorkelling1.png" alt="Snorkelling">
+                            <img class="large_img" id="snorkelling_img" src="/media/images/Snorkelling.png" alt="Snorkelling">
+                        </div>
+                    </div>
+
+                    <div class="ttdo_slide" id="beach">
+                        <p class="slider2_things_txt" style="font-family: Montserrat_Italic">
+                        Things to do
+                        </p>
+                        <p class="slider2_txt" id="beach_txt" style="font-family: Silk_Serif;">
+                        SUNBATH
+                        </p>
+                        <p class="slider2_para" id="beach_para" style="font-family: lato;">The summer season, spanning from March to May, offers a warm embrace to visitors seeking a sun-kissed retreat in Lakshadweep. The temperature usually stays between 22°C to 33°C. The days are warm but the cool evenings more than 
+                        makeup for that. Summer is the best time to head out to the beach and enjoy water sports.
+                        </p>
+                        <div class="img_wrap">
+                            <img class="small_img" id="beach1_img" src="/media/images/coconut.png" alt="beach">
+                            <img class="large_img" id="beach_img" src="/media/images/beach_image1.png" alt="beach">
+                        </div>
+                    </div>
+
+                    <div class="ttdo_slide" id="kite">
+                        <p class="slider2_things_txt" style="font-family: Montserrat_Italic">
+                        Things to do
+                        </p>
+                        <p class="slider2_txt" id="kite_txt" style="font-family: Silk_Serif;">
+                        KITESURFING
+                        </p>
+                        <p class="slider2_para" id="kite_para" style="font-family: lato;">Love to race with wind and play with water? Kite surfing is the right option for enthusiastic lovers such as you. Kite surfing is available at Kadamat Island in Lakshadweep. However, you need to learn the art of being steady and still in water, even amidst strong wind, in order to undertake surfing. This activity is not meant for people who are averse to water or to strong wind.
+                        </p>
+                        <div class="img_wrap">
+                            <img class="small_img" id="kite1_img" src="/media/images/kitesurfing1.png" alt="kitesurfing">
+                            <img class="large_img" id="kite_img" src="/media/images/kitesurfing.png" alt="kitesurfing">
+                        </div>
+                    </div>
+
+                    <div class="ttdo_slide" id="kayaking">
+                        <p class="slider2_things_txt" style="font-family: Montserrat_Italic">
+                        Things to do
+                        </p>
+                        <p class="slider2_txt" id="kayaking_txt" style="font-family: Silk_Serif;">
+                        KAYAKING
+                        </p>
+                        <p class="slider2_para" id="kayaking_para" style="font-family: lato;">“Kayak” is referred to small size boat and sailor himself propels this boat with the help of double-bladed paddle. Kayaking offers you two modes of pleasure – one excitement of paddling the amazing Kayak on the Arabian Sea and secondly, enjoying the stunning views offered by the nature for you.
+                        </p>
+                        <div class="img_wrap">
+                            <img class="small_img" id="kayaking1_img" src="/media/images/Kayaking1.png" alt="Kayaking">
+                            <img class="large_img" id="kayaking_img" src="/media/images/Kayaking.png" alt="Kayaking">
+                        </div>
+                    </div>
+
+                    <div class="dots1">
+                        <label for="ra1" id="label1"></label>
+                        <label for="ra2" id="label2"></label>
+                        <label for="ra3" id="label3"></label>
+                        <label for="ra4" id="label4"></label>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .index_img_slider2{
+                    position: relative;
+                    max-width: 47vw;
+                    margin: 2% auto;
+
+                    .ttdo_slider{
+                        height: 47.8vw;
+                        width: 83vw;
+                        top: 5vw;
+                        left: -18vw;
+                        position: absolute;
+                        overflow: hidden;
+                        padding-top: 56.25%;
+                        background: white;
+                    }
+                    .ttdo_slide{
+                        position: absolute;
+                        width: 70.5vw;
+                        height: 47vw;
+                        top: 0; 
+                        left: 27vw;
+                        opacity: 0;
+                    }
+                    .ttdo_slide img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transform: scale(1.1);
+                        transition: 1.3s;
+                    }
+                    .dots1{
+                        width: 100%;
+                        position: absolute;
+                        bottom: 1.5vw;
+                        display: flex;
+                        left: 8vw;
+                    }
+                    .dots1 label{
+                        position: relative;
+                        width: 0.75vw;
+                        height: 0.8vw;
+                        background:rgba(150, 150, 150, 0.575);
+                        margin: 0 10px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: 0.2s ease-in-out;
+                    }
+                    .dots1 label:hover{
+                        background:rgb(41, 215, 246);
+                    }
+                    #ra1:checked ~ #snorkelling,
+                    #ra2:checked ~ #beach,
+                    #ra3:checked ~ #kite,
+                    #ra4:checked ~ #kayaking{
+                        opacity: 1;
+                    }
+                    #ra1:checked ~ #snorkelling img,
+                    #ra2:checked ~ #beach img,
+                    #ra3:checked ~ #kite img,
+                    #ra4:checked ~ #kayaking img{
+                        transform:scale(1);
+                    }
+                    #ra1:checked ~ .dots1 #label1,  
+                    #ra2:checked ~ .dots1 #label2,
+                    #ra3:checked ~ .dots1 #label3,
+                    #ra4:checked ~ .dots1 #label4{
+                        background:rgb(41, 215, 246);
+                    }
+                    .radio1{
+                        display: none;
+                    }
+                    .img_wrap{
+                        position: relative;
+                        display: flex;
+                    }
+                    .small_img{
+                        position: relative;
+                        top: 13vw;
+                        left: -29vw;
+                        max-height: 15vw;
+                    }
+                    .large_img{
+                        position: relative;
+                        left: -30vw;  
+                        top: -25.5vw;
+                    }
+                    #beach1_img{
+                        top: 11.5vw;
+                    }
+                    #beach_img{
+                        top: -30vw;
+                        height: 52vw;
+                    }
+                    #kite1_img{
+                        top: 11vw;
+                    }
+                    #kite_img{
+                        top: -28vw;
+                    }
+                    #kayaking1_img{
+                        top: 14vw;
+                    }
+                    #kayaking_img{
+                        top: -25vw;
+                    }
+                    .slider2_things_txt{
+                        position: relative;
+                        top: 3vw;
+                        left: -25vw;
+                        font-size: 1.7vw;
+                        height: auto;
+                        width: 15vw;
+                        font-size: 1.9vw;
+                        font-weight: -900;
+                        color: rgb(63,63,63,0.91);
+                        z-index: 99;
+                    }
+                    .slider2_txt{
+                        height: auto;
+                        width: 25vw;
+                        position: relative;
+                        top: 5vw;
+                        left: -25vw;
+                        text-align: left;
+                        font-size: 2.5vw;
+                        font-weight: -900;
+                        color: rgb(63,63,63,0.91);
+                        z-index: 99;
+                    }
+                    .slider2_para{
+                        height: auto;
+                        width: 19vw;
+                        position: relative;
+                        text-align: justify;
+                        left: -25vw;
+                        top: 7.5vw;
+                        font-size: 1.3vw;
+                        color: rgba(0, 0, 0, 0.81);
+                        border-radius: 51px 0 51px 0;
+                    }
+                }
+            </style>
+        </div>
+        <!-- footer -->
+        <footer class="footer"  style="background-image: url(footer.jpg);">
+            <a href="#"><img class="top_redirect reveal_left" src="/media/icons/coconut_icon.png" alt="seashells"></a>
+            <div class="footer_social">
+                <a target="_blank" href="https://www.facebook.com/"><img src="/media/icons/facebook_icon.png" alt="Facebook"></a>
+                <a target="_blank" href="https://www.instagram.com/"><img src="/media/icons/instagram_icon.png" alt="Instagram"></a>
+                <a target="_blank" href="https://twitter.com/"><img src="/media/icons/twitter_icon.png" alt="X"></a>
+                <a target="_blank" href="https://www.youtube.com/"><img src="/media/icons/youtube_icon.png" alt="YouTube"></a>
+            </div>
+            <div class="footer_about">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a id="Newsletter">Newsletter</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a id="contactUs">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer_credits" >
+                <p>&copy;2024 Developed by Uttam M. Dangar MG23045</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- Login Form -->
+    <form id="loginForm" class="form" method="POST" action="/login">
+        <h2>Sign In</h2>
+        <img id="login_cancel" class="cancel" src="/media/icons/cancel_icon.png" alt="">
+        <input type="text" id="loginUsername" name="email" placeholder="Email" required>
+        <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+        <button type="submit">Sign In</button>
+        <p>Don't have an account? <span id="register_switch" class="switch">Register</span></p>
+    </form>
+
+    <!-- Register Form -->
+    <form id="registerForm" class="form hidden" method="POST" action="/register">
+        <h2>Sign Up</h2>
+        <img id="register_cancel" class="cancel" src="/media/icons/cancel_icon.png" alt="">
+        <input type="text" name="username" id="registerUsername" placeholder="Username" required>
+        <input type="email" name="email" id="registerEmail" placeholder="Email" required>
+        <input type="password" name="password" id="registerPassword" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <span id="login_switch" class="switch">Login</span></p>
+    </form>
+
+    
+    <!-- newsletter popup -->
+    <div class="newsletter_popup" id="newsletter_popup_id">
+        <img id="newsletterimg" src="/media/images/newsletter_image.png" alt="newsletter">
+        <div class="newsletter_container">
+            <p id="newsletter_txt1">Subscribe to our Newsletter!</p>
+            <p id="newsletter_txt2">Subscribe to our Newsletter and stay updated.</p>
+            <img class="cancel_icon" src="/media/icons/cancel_icon.png" alt="cancel">
+            <form class="newsletter-form" action="/addNewsletter" method="post">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <input type="submit" value="Subscribe">
+              </form>
+        </div>
+    </div>
+
+    <!-- contactUs popup -->
+    <div class="contact_popup" id="contact_popup_id">
+        <img id="contactUsimg" src="/media/images/contactUs_image.png" alt="contactUs">
+        <div class="contact_container">
+            <h1>Contact Us</h1>
+            <form action="/contactus" method="POST">
+                <img class="cancel_icon1" src="/media/icons/cancel_icon.png" alt="cancel">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+              
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <input type="submit" value="Send Message">
+              </form>              
+        </div>
+    </div>
+
+</body>
+</html>

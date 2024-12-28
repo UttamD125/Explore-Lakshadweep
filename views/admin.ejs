@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/admin.js"></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+
+        <div style="font-size: 1.7rem;" class="logo">Admin Dashboard</div>
+        <nav>
+            <ul>
+                <li><a href="#add-package">Add Package</a></li>
+                <li><a href="#add-fromflight">Add From Flight</a></li>
+                <li><a href="#add-toflight">Add To Flight</a></li>
+                <li><a href="#add-fromcruise">Add From Cruise</a></li>
+                <li><a href="#add-tocruise">Add To Cruise</a></li>
+                <li><a href="#manage-flight">Manage Flights</a></li>
+                <li><a href="#manage-cruise">Manage Cruises</a></li>
+                <li><a href="#manage-packagebooking">Manage Package Booking</a></li>
+                <li><a href="#manage-flightbooking">Manage Flight Booking</a></li>
+                <li><a href="#manage-cruisebooking">Manage Cruise Booking</a></li>
+                <li><a href="#manage-query">Manage Queries</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+                <li><a href="/logoutadmin">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <header class="header">
+            <h1>Welcome to Admin Dashboard</h1>
+        </header>
+
+        <!-- Sections -->
+        <section id="add-package">
+            <h2>Add Package</h2>
+            <form id="addPackageForm" action="/addPackage" method="POST" enctype="multipart/form-data">
+                
+                <div class="layout-options">
+                    <label>
+                        <input type="radio" name="packageNameLayout" value="left" checked>
+                        Left Side
+                    </label>
+                    <label>
+                        <input type="radio" name="packageNameLayout" value="right">
+                        Right Side
+                    </label>
+                </div>
+                
+                <!-- Package Name -->
+                <label for="packageName">Package Name</label>
+                <input type="text" id="packageName" name="packageName" placeholder="Package Name" required>
+        
+                <!-- Package Image -->
+                <label for="packageImage">Package Image</label>
+                <input type="file" id="packageImage" name="packageImage" accept="image/*" required>
+        
+                <!-- Package Options -->
+                <fieldset>
+                    <legend>Package Options</legend>
+                    <label><input type="checkbox" name="options" value="Flight"> Flight</label>
+                    <label><input type="checkbox" name="options" value="Hotels"> Hotels</label>
+                    <label><input type="checkbox" name="options" value="Activities"> Activities</label>
+                    <label><input type="checkbox" name="options" value="Meal"> Meal</label>
+                    <label><input type="checkbox" name="options" value="Transfer"> Transfer</label>
+                </fieldset>
+        
+                <!-- Locations -->
+                <label>Locations</label>
+                <div id="locationsContainer">
+                    <button type="button" id="addLocationButton">+ Add Location</button>
+                </div>
+        
+                <!-- Days and Nights -->
+                <label for="days">Days</label>
+                <input type="number" id="days" name="days" min="1" max="8" required>
+                <label for="nights">Nights</label>
+                <input type="number" id="nights" name="nights" readonly>
+        
+                <!-- Price -->
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" placeholder="Price" required>
+        
+                <!-- Inclusion -->
+                <label>Inclusions</label>
+                <div id="inclusionsContainer">
+                    <button type="button" id="addInclusionButton">+ Add Inclusion</button>
+                </div>
+        
+                <!-- Daywise Itinerary -->
+                <label>Daywise Itinerary</label>
+                <div id="itineraryContainer"></div>
+        
+                <button type="submit">Add Package</button>
+            </form>
+        </section>
+
+        <div class="side-by-side">
+            <section id="add-fromflight">
+                <h2>Add From Flight</h2>
+                <form action="/addFromFlight" method="POST">
+                    <input type="text" name="cityName" placeholder="City Name" required>
+                    <button type="submit">Add</button>
+                </form>
+            </section>
+        
+            <section id="add-toflight">
+                <h2>Add To Flight</h2>
+                <form action="/addToFlight" method="POST">
+                    <input type="text" name="cityName" placeholder="City Name" required>
+                    <button type="submit">Add</button>
+                </form>
+            </section>
+        </div>        
+
+        <div class="side-by-side">
+            <section id="add-fromcruise">
+                <h2>Add From Cruise</h2>
+                <form action="/addFromCruise" method="POST">
+                    <input type="text" name="cityName" placeholder="City Name" required>
+                    <button type="submit">Add</button>
+                </form>
+            </section>
+        
+            <section id="add-tocruise">
+                <h2>Add To Cruise</h2>
+                <form action="/addToCruise" method="POST">
+                    <input type="text" name="cityName" placeholder="City Name" required>
+                    <button type="submit">Add</button>
+                </form>
+            </section>
+        </div>        
+
+        <div class="side-by-side">
+            <section id="manage-flight">
+                <h2>Manage Flights</h2>
+                <!-- From Flights Table -->
+                <h3>From Flights</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>City Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% fromFlights.forEach(flight => { %>
+                            <tr>
+                                <td><%= flight.cityName %></td>
+                                <td>
+                                    <form action="/deleteFromFlight/<%= flight._id %>" method="POST" style="display:inline;">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+        
+                <!-- To Flights Table -->
+                <h3>To Flights</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>City Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% toFlights.forEach(flight => { %>
+                            <tr>
+                                <td><%= flight.cityName %></td>
+                                <td>
+                                    <form action="/deleteToFlight/<%= flight._id %>" method="POST" style="display:inline;">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </section>
+        
+            <section id="manage-cruise">
+                <h2>Manage Cruises</h2>
+                <!-- From Cruises Table -->
+                <h3>From Cruises</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>City Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% fromCruises.forEach(cruise => { %>
+                            <tr>
+                                <td><%= cruise.cityName %></td>
+                                <td>
+                                    <form action="/deleteFromCruise/<%= cruise._id %>" method="POST" style="display:inline;">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+        
+                <!-- To Cruises Table -->
+                <h3>To Cruises</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>City Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% toCruises.forEach(cruise => { %>
+                            <tr>
+                                <td><%= cruise.cityName %></td>
+                                <td>
+                                    <form action="/deleteToCruise/<%= cruise._id %>" method="POST" style="display:inline;">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </section>
+        </div>        
+
+        <section id="manage-packagebooking">
+            <h2>Manage Package Bookings</h2>
+            <% if (packageBookings && packageBookings.length > 0) { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Package Name</th>
+                            <th>Number of Persons</th>
+                            <th>Preferred Date</th>
+                            <th>Total Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% packageBookings.forEach(function(booking) { %>
+                            <tr>
+                                <td><%= booking.username %></td>
+                                <td><%= booking.packageName %></td>
+                                <td><%= booking.numberOfPersons %></td>
+                                <td><%= new Date(booking.preferredDate).toLocaleDateString() %></td>
+                                <td>₹<%= booking.totalPrice %></td>
+                                <td class="status <%= booking.status.toLowerCase() %>">
+                                    <%= booking.status %>
+                                </td>
+                                <td>
+                                    <button class="approve-package-btn" data-id="<%= booking._id %>">Approve</button>
+                                    <button class="reject-package-btn" data-id="<%= booking._id %>">Reject</button>
+                                    <button class="delete-package-btn" data-id="<%= booking._id %>" style="background-color: #87CEEB; border: none; cursor: pointer;">Delete</button>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>No package bookings available.</p>
+            <% } %>
+        </section>
+        
+
+        <section id="manage-flightbooking">
+            <h2>Manage Flight Bookings</h2>
+            <% if (flightBookings && flightBookings.length > 0) { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Departure Date</th>
+                            <th>Return Date</th>
+                            <th>Adults</th>
+                            <th>Children</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% flightBookings.forEach(function(booking) { %>
+                            <tr>
+                                <td><%= booking.username %></td>
+                                <td><%= booking.from %></td>
+                                <td><%= booking.to %></td>
+                                <td><%= new Date(booking.departureDate).toLocaleDateString() %></td>
+                                <td><%= booking.returnDate ? new Date(booking.returnDate).toLocaleDateString() : 'N/A' %></td>
+                                <td><%= booking.adults %></td>
+                                <td><%= booking.children %></td>
+                                <td class="status <%= booking.status.toLowerCase() %>">
+                                    <%= booking.status %>
+                                  </td>
+                                  <td>
+                                    <button class="approve-flight-btn" data-id="<%= booking._id %>">Approve</button>
+                                    <button class="reject-flight-btn" data-id="<%= booking._id %>">Reject</button>
+                                    <button class="delete-flight-btn" data-id="<%= booking._id %>" style="background-color: #87CEEB; border: none; cursor: pointer;">Delete</button>                               
+                                </td>                                
+                            </tr>                            
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>No flight bookings available.</p>
+            <% } %>
+        </section>
+        
+        <section id="manage-cruisebooking">
+            <h2>Manage Cruise Bookings</h2>
+            <% if (cruiseBookings && cruiseBookings.length > 0) { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Departure Date</th>
+                            <th>Return Date</th>
+                            <th>Adults</th>
+                            <th>Children</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% cruiseBookings.forEach(function(booking) { %>
+                            <tr>
+                                <td><%= booking.username %></td>
+                                <td><%= booking.from %></td>
+                                <td><%= booking.to %></td>
+                                <td><%= new Date(booking.departureDate).toLocaleDateString() %></td>
+                                <td><%= booking.returnDate ? new Date(booking.returnDate).toLocaleDateString() : 'N/A' %></td>
+                                <td><%= booking.adults %></td>
+                                <td><%= booking.children %></td>
+                                <td class="status <%= booking.status.toLowerCase() %>">
+                                    <%= booking.status %>
+                                  </td>
+                                  <td>
+                                    <button type="button" class="approve-cruise-btn" data-id="<%= booking._id %>" style="background-color: #87CEEB; border: none; cursor: pointer;">Approve</button>
+                                    <button type="button" class="reject-cruise-btn" data-id="<%= booking._id %>" style="background-color: #87CEEB; border: none; cursor: pointer;">Reject</button>                                    
+                                    <button type="button" class="delete-cruise-btn" data-id="<%= booking._id %>" style="background-color: #87CEEB; border: none; cursor: pointer;">Delete</button>
+                                </td>                              
+                            </tr>                            
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>No cruise bookings available.</p>
+            <% } %>
+        </section>
+
+        <section id="manage-query">
+            <h2>Manage Queries</h2>
+        
+            <% if (contactQueries.length > 0) { %>
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% contactQueries.forEach(query => { %>
+                    <tr>
+                      <td><%= query.name %></td>
+                      <td><%= query.email %></td>
+                      <td><%= query.message %></td>
+                      <td>
+                        <form action="/deleteContact/<%= query._id %>" method="POST" style="display:inline;">
+                          <button type="submit" style="background-color: #87CEEB; border: none;cursor: pointer;">Delete</button>
+                        </form>
+                      </td>
+                    </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            <% } else { %>
+              <p>No contact queries found.</p>
+            <% } %>
+        </section>
+        
+        <section id="newsletter">
+            <h2>Newsletter Subscriptions</h2>
+          
+            <% if (newsletters.length > 0) { %>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Email</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% newsletters.forEach(function(newsletter) { %>
+                    <tr>
+                      <td><%= newsletter.email %></td>
+                      <td>
+                        <form action="/deleteNewsletter/<%= newsletter._id %>" method="POST" style="display:inline;">
+                          <button type="submit" style="color: #ffffff; background: #87CEEB; cursor: pointer;">
+                            Delete
+                          </button>
+                        </form>
+                      </td>
+                    </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+            <% } else { %>
+              <p>No newsletter subscriptions found.</p>
+            <% } %>
+        </section>
+    </main>
+
+</body>
+</html>

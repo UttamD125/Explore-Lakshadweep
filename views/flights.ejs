@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <link rel="icon" href="/media/icons/L_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css"> 
+    <script type="text/javascript" src="/js/main.js"></script>
+</head>
+<body>
+
+    <!-- header -->
+    
+
+    <!-- flights body -->
+    <body class="flightsbody">
+
+        <div class="flights_body" id="blur">
+
+            <header class="header" style="background-image: url(/media/images/flights_image.png);">
+                <div id="navbar_whole">
+                    <div class="nav_logo">
+                        <a id="nav_icon" href="/"></a>
+                        <ul>
+                            <a href="/" id="nav_title">Explore Lakshadweep</a><br>
+                            <a href="/" id="nav_slogan">Chill By The Shore, Forevermore . . . .</a>
+                        </ul>
+                    </div>
+                    <div class="nav_buttons">
+                        <ul>
+                            <li><a href="/islands" id="nav_island"><img class="nav_buttons_icon" src="/media/icons/island_icon.png"  alt="islands">Islands</a>
+                                <ul class="dropdown">
+                                    <li><a class="nav_dropdown_border rborder" id="Agatti_border" href="/islands#agatti_title">Agatti</a></li>
+                                    <li><a class="nav_dropdown_border rborder" href="/islands#amini_title">Amini</a></li>
+                                    <li><a class="nav_dropdown_border rborder" href="/islands#andrott_title">Andrott</a></li>
+                                    <li><a class="nav_dropdown_border rborder" href="/islands#bangaram_title">Bangaram</a></li>
+                                    <li><a class="nav_dropdown_border rborder" href="/islands#bitra_title">Bitra</a></li>
+                                    <li><a class="nav_dropdown_border rborder" href="/islands#chetlat_title">Chetlat</a></li>
+                                    <li><a class="nav_dropdown_border rborder" href="/islands#kadmat_title">Kadamat</a></li>
+                                    <li><a class="nav_dropdown_border rborder" href="/islands#kalpeni_title">Kalpeni</a></li>
+                                    <li><a class="nav_dropdown_border rborder" href="/islands#kavaratti_title">Kavaratti</a></li>
+                                    <li><a class="nav_dropdown_border rborder" href="/islands#kiltan_title">Kiltan</a></li>
+                                    <li><a href="islands#minicoy_title">Minicoy</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/package" id="nav_package"><img class="nav_buttons_icon" src="/media/icons/package_icon.png" alt="packages">Packages</a></li>
+                            <li><a href="/flights" id="nav_flight"><img class="nav_buttons_icon" src="/media/icons/plane_icon.png" alt="Flights">Flights</a></li>
+                            <li><a href="/cruise" id="nav_cruise"><img class="nav_buttons_icon" src="/media/icons/cruise_icon.png" alt="cruise">Cruise</a></li>
+                        </ul>
+                    </div>
+                    <a><img id="profile_id" class="profile" src="<%= profileImage %>" alt="Profile"/></a>
+                </div>
+            </header>
+
+
+            <div class="booking" id="booking1">
+                <p class="reveal" id="booking_txt" style="font-family: latSilk_Serif_Regular;">Flights to The Paradise</p>
+                <img class="reveal_left" id="palmtree_image" src="/media/images/palmtree_image.png" alt="">
+                <img class="reveal_left" id="flight_image" src="/media/images/flight_image.png" alt="">
+                <img class="reveal_left" id="coconut_image" src="/media/images/coconut_image.png" alt="">
+                <img class="reveal_right" id="flamingo_image" src="/media/images/flamingo_image.png" alt="">
+                <style>
+                    #palmtree_image{
+                        position: absolute;
+                        top: -4vw;
+                        left: -4vw;
+                        height: 40vw;    
+                        z-index: 99;                
+                    }
+                    #flight_image{
+                        position: absolute;
+                        top: 5.2vw;
+                        left: 61vw;
+                        height: 9.7vw;
+                        z-index: 99;                
+                    }
+                    #coconut_image{
+                        position: absolute;
+                        top: 48.7vw;
+                        left: 7vw;
+                        height: 6.5vw;
+                        z-index: 99;                
+                    }
+                    #flamingo_image{
+                        position: absolute;
+                        left: 81vw;
+                        top: 34vw;
+                        height: 21vw;
+                        z-index: 99;                
+                    }
+                </style>
+                <div class="booking_area">
+                    <div class="bookingclass">
+
+                        <form class="reveal" id="bookingForm" action="/flightBooking" method="post">
+                            <div class="tripType">
+                                <div class="onewrap">
+                                    <input id="one-wayTrip" type="radio" value="one-way" name="tripType" checked>
+                                    <label id="one-wayTxt" for="one-wayTrip">One-Way</label>
+                                </div>
+                                <div class="roundwrap">
+                                    <input id="roundTrip" type="radio" value="two-way" name="tripType">
+                                    <label id="roundTripTxt" for="roundTrip">Round-Trip</label>
+                                </div>
+                            </div>
+                            <div class="routlocation">
+                                <label id="fromtxt" for="fromInput">From</label>
+                                <select style="color: #5c5c5c;" id="fromInput" name="from" required>
+                                    <option value="" disabled selected>Select city</option>
+                                    <% fromFlights.forEach(function(flight) { %>
+                                        <option value="<%= flight.cityName %>"><%= flight.cityName %></option>
+                                    <% }); %>
+                                </select>
+                
+                                <label id="totxt" for="toInput">To</label>
+                                <select style="color: #5c5c5c;" id="toInput" name="to" required>
+                                    <option value="" disabled selected>Select city</option>
+                                    <% toFlights.forEach(function(flight) { %>
+                                        <option value="<%= flight.cityName %>"><%= flight.cityName %></option>
+                                    <% }); %>
+                                </select>
+                            </div>
+                            <div class="dates">
+                                <label id="departuretxt" for="departure">Departure</label>
+                                <input id="departure" type="date" name="departureDate">
+                                <label id="returntxt" for="return">Return</label>
+                                <input id="return" type="date" name="returnDate" disabled>
+                            </div>
+                            <div class="peoples">
+                                <label id="adulttxt" for="adult">Adults (Aged 12+ yrs)</label>
+                                <input id="adult" type="number" name="adults" min="1" max="7" required>
+                                <label id="childrentxt" for="children">Children (Aged 2-12 yrs)</label>
+                                <input id="children" type="number" name="children" min="0" max="5" value="0">
+                            </div>
+                            <input id="submit" type="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+
+    <!-- Login Form -->
+    <form id="loginForm" class="form" method="POST" action="/login">
+        <h2>Sign In</h2>
+        <img id="login_cancel" class="cancel" src="/media/icons/cancel_icon.png" alt="">
+        <input type="text" id="loginUsername" name="email" placeholder="Email" required>
+        <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+        <button type="submit">Sign In</button>
+        <p>Don't have an account? <span id="register_switch" class="switch">Register</span></p>
+    </form>
+
+    <!-- Register Form -->
+    <form id="registerForm" class="form hidden" method="POST" action="/register">
+        <h2>Sign Up</h2>
+        <img id="register_cancel" class="cancel" src="/media/icons/cancel_icon.png" alt="">
+        <input type="text" name="username" id="registerUsername" placeholder="Username" required>
+        <input type="email" name="email" id="registerEmail" placeholder="Email" required>
+        <input type="password" name="password" id="registerPassword" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <span id="login_switch" class="switch">Login</span></p>
+    </form>
+    
+    </body>
+
+    <style>
+        #bookingForm{
+            position: relative;
+            width: 61vw;
+            top: 11vw;
+            left: 29vw;
+        
+            .tripType {
+                position: relative;
+                font-size: 1.2vw;
+                font-weight: 500;
+                color: #818181;
+                left: -0.5vw;
+                display: flex;
+                gap: 6vw; 
+                width: fit-content;
+            }
+
+            .onewrap,
+            .roundwrap {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 2.5vw;
+                width: 17vw;
+                border-radius: 17px;
+                background-color: #66f1fb31;
+                cursor: pointer;
+                border: 2px solid #66f1fb51;
+                transition: background-color 0.3s ease, border-color 0.3s ease;
+            }
+
+            .onewrap:hover,
+            .roundwrap:hover {
+                background-color: #66f1fb51;
+                border-color: #66f1fb71;
+            }
+
+            /* Hide default radio button */
+            .onewrap input,
+            .roundwrap input {
+                display: none;
+            }
+
+            /* Style labels for the radio buttons */
+            .onewrap label,
+            .roundwrap label {
+                cursor: pointer;
+                color: #404040;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                font-size: 1vw;
+            }
+
+            .onewrap input:checked + label,
+            .roundwrap input:checked + label {
+                background-color: #66f1fb71;
+                color: white;
+                border-radius: 17px;
+            }
+
+            .routlocation{
+                position: relative;
+                margin: 3vw 0;
+
+                #fromInput{
+                    position: relative;
+                    left: -4vw;
+                    height: 4vw;
+                    width: 17vw;
+                    border-radius: 7px;
+                    border: 2px solid #66f1fb51;
+                    font-size: 1.1vw;
+                }
+                #fromtxt{
+                    position: relative;
+                    top: -2vw;
+                    left: 0.3vw;
+                    height: 1vw;
+                    padding: 0 0.3vw;
+                    background-color: rgba(255, 255, 255, 0.479);
+                    z-index: 9;
+                    font-size: 1vw;
+                    font-weight: 500;
+                    color: #404040;
+                }
+                #fromInput::placeholder{
+                    position: relative;
+                    left: 1vw;
+                }
+                #toInput{
+                    position: relative;
+                    height: 4vw;
+                    width: 17vw;
+                    border-radius: 7px;
+                    border: 2px solid #66f1fb51;
+                    font-size: 1.1vw;
+                }
+                #totxt{
+                    position: relative;
+                    top: -2vw;
+                    left: 2.8vw;
+                    height: 1vw;
+                    padding: 0 0.3vw;
+                    background-color: rgba(255, 255, 255, 0.479);
+                    z-index: 9;
+                    font-size: 1vw;
+                    font-weight: 500;
+                    color: #404040;
+                }
+                #toInput::placeholder{
+                    position: relative;
+                    left: 1vw;
+                }
+            }
+
+            .dates{
+                position: relative;
+                margin: 3vw 0;
+
+                #departure{
+                    position: relative;
+                    left: -6.5vw;
+                    height: 4vw;
+                    width: 17vw;
+                    padding-left: 1vw;
+                    color: #808080;
+                    border-radius: 7px;
+                    border: 2px solid #66f1fb51;
+                    font-size: 1.1vw;
+                }
+                #departuretxt{
+                    position: relative;
+                    top: -2vw;
+                    left: 0.3vw;
+                    height: 1vw;
+                    padding: 0 0.3vw;
+                    background-color: rgba(255, 255, 255, 0.479);
+                    z-index: 9;
+                    font-size: 1vw;
+                    font-weight: 500;
+                    color: #404040;
+                }
+
+                #return{
+                    position: relative;
+                    left: -5vw;
+                    height: 4vw;
+                    width: 17vw;
+                    padding-left: 1vw;
+                    border-radius: 7px;
+                    color: #808080;
+                    border: 2px solid #66f1fb51;
+                    font-size: 1.1vw;
+                }
+                #returntxt{
+                    position: relative;
+                    top: -2vw;
+                    height: 1vw;
+                    padding: 0 0.3vw;
+                    background-color: rgba(255, 255, 255, 0.479);
+                    z-index: 9;
+                    font-size: 1vw;
+                    font-weight: 500;
+                    color: #404040;
+                }
+
+            }
+            .peoples{
+                position: relative;
+                margin: 3vw 0;
+
+                #adult{
+                    position: relative;
+                    left: -11.7vw;
+                    height: 4vw;
+                    width: 17vw;
+                    border-radius: 7px;
+                    padding-left: 1vw;
+                    border: 2px solid #66f1fb51;
+                    font-size: 1.1vw;
+                }
+                #adulttxt{
+                    position: relative;
+                    top: -2vw;
+                    left: 0.3vw;
+                    height: 1vw;
+                    padding: 0 0.3vw;
+                    background-color: rgba(255, 255, 255, 0.479);
+                    z-index: 9;
+                    font-size: 1vw;
+                    font-weight: 500;
+                    color: #404040;
+                }
+
+                #children{
+                    position: relative;
+                    left: -18.6vw;
+                    height: 4vw;
+                    width: 17vw;
+                    padding-left: 1vw;
+                    border-radius: 7px;
+                    border: 2px solid #66f1fb51;
+                    font-size: 1.1vw;
+                }
+                #childrentxt{
+                    position: relative;
+                    top: -2vw;
+                    left: -5.2vw;
+                    height: 1vw;
+                    padding: 0 0.3vw;
+                    background-color: rgba(255, 255, 255, 0.479);
+                    z-index: 9;
+                    font-size: 1vw;
+                    font-weight: 500;
+                    color: #404040;
+                }
+
+            }
+            #submit{
+                position: relative;
+                height: 3vw;
+                width: 10vw;
+                left: 14.8vw;
+                border-radius: 17px;
+                align-items: center;
+                cursor: pointer;
+                background-color: rgb(85, 221, 243, 0.81);
+                border: 2px solid #66f1fb11;
+                font-size: 1.4vw;
+                font-weight: 600;
+                color: white;
+            }
+        }
+        
+        .flightsbody{
+            position: relative;
+            height: 51vw;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .booking{
+            position: relative;
+            height: 56vw;
+            width: 100%;
+            background-image: url(/media/images/flight_back_image.png);
+            background-size: cover;
+            background-position: top;
+        
+            #booking_txt{
+                position: relative;
+                width: 71vw;
+                top: 4vw;
+                left: 17vw;
+                text-align: center;
+                color: #5a5a5a;
+                letter-spacing: 0.1vw;
+                font-size: 4vw;
+                text-transform: uppercase;
+                font-weight: 50;
+            }
+        }
+    </style> 
+</body>
+</html>

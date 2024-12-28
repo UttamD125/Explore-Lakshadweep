@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Islands of The Lakshadweep</title>
+    <link rel="icon" href="/media/icons/L_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="/js/main.js"></script>
+</head>
+<body>
+
+    <div class="islands_whole_body" id="blur">
+
+        <!-- header -->
+        <header class="header" style="background-image: url(/media/images/islands_back.png);">
+            <div id="navbar_whole">
+                <div class="nav_logo">
+                    <a id="nav_icon" href="/"></a>
+                    <ul>
+                        <a href="/" id="nav_title">Explore Lakshadweep</a><br>
+                        <a href="/" id="nav_slogan">Chill By The Shore, Forevermore . . . .</a>
+                    </ul>
+                </div>
+                <div class="nav_buttons">
+                    <ul>
+                        <li><a href="/islands" id="nav_island"><img class="nav_buttons_icon" src="/media/icons/island_icon.png"  alt="islands">Islands</a>
+                            <ul class="dropdown">
+                                <li><a class="nav_dropdown_border rborder" id="Agatti_border" href="/islands#agatti_title">Agatti</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#amini_title">Amini</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#andrott_title">Andrott</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#bangaram_title">Bangaram</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#bitra_title">Bitra</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#chetlat_title">Chetlat</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#kadmat_title">Kadamat</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#kalpeni_title">Kalpeni</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#kavaratti_title">Kavaratti</a></li>
+                                <li><a class="nav_dropdown_border rborder" href="/islands#kiltan_title">Kiltan</a></li>
+                                <li><a href="/islands#minicoy_title">Minicoy</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/package" id="nav_package"><img class="nav_buttons_icon" src="/media/icons/package_icon.png" alt="packages">Packages</a></li>
+                        <li><a href="/flights" id="nav_flight"><img class="nav_buttons_icon" src="/media/icons/plane_icon.png" alt="Flights">Flights</a></li>
+                        <li><a href="/cruise" id="nav_cruise"><img class="nav_buttons_icon" src="/media/icons/cruise_icon.png" alt="cruise">Cruise</a></li>
+                    </ul>
+                </div>
+                <a><img id="profile_id"  class="profile" src="<%= profileImage %>" alt="Profile"/></a>
+            </div>
+        </header>
+
+        <!-- island body -->
+        <body class="island_body">
+
+            <!-- island page title -->
+            <p class="reveal" id="island_title_txt1" style="font-family: Montserrat_Italic;">The Islands of </p>
+            <p class="reveal" id="island_title_txt2" style="font-family: latSilk_Serif_Regular;">The Lakshadweep</p>
+            <style>
+                 #island_title_txt1{
+                    position: relative;
+                    top: 5vw;
+                    left: 4.7vw;
+                    width: 91vw;
+                    text-align: center;
+                    padding-top: 1vw;
+                    color: #3f3f3f;
+                    letter-spacing: 0.4vw;
+                    font-size: 2vw;
+                    font-weight: 400;
+                }
+                #island_title_txt2{
+                    position: relative;
+                    top: 5vw;
+                    left: 4.7vw;
+                    width: 91vw;
+                    text-align: center;
+                    color: #3f3f3f;
+                    letter-spacing: 0.1vw;
+                    font-size: 5vw;
+                    text-transform: uppercase;
+                    font-weight: 50;
+                }
+            </style>
+            
+            <!-- island map -->
+            <div id="map_wrap" class="reveal">
+                <iframe id="Imap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352410.0904813767!2d71.61029345527706!3d9.98248416991699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b9fcd65cae4973d%3A0x17bd7416842ce9aa!2sLakshadweep!5e1!3m2!1sen!2sin!4v1708886453501!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <style>
+                #map_wrap{
+                    position: relative;
+                    top: 5vw;
+                    height: 58vw;
+                    width: 100%;
+                
+                    #Imap{
+                    position: relative;
+                    top: 5.5vw;
+                    left: 10vw;
+                    height: 47vw;
+                    width: 80vw;
+                    box-shadow: 0 0 15px 15px rgb(199, 199, 199, 0.71);
+                    }
+                }
+            </style>
+
+    <!-- AGATTI -->
+            <p class="islands_title reveal reveal" id="agatti_title" style="font-family: Silk_Serif;">AGATTI</p>
+            <div class="islands_info " id="agatti">
+
+                <img class="right_image reveal_right" src="/media/images/agatti_image.png" alt="">
+                <p class="para_left reveal_left" id="agatti_para" style="font-family: lato;">The Agatti Island is at a distance of 459 km (248 nautical miles) from Kochi and is located the west of Kavaratti Island. It lies between 10o 48′ and 10o 53′ N latitude and 72o 09′ and 7o 13′ E longitude, having an area of 3.84 sq km, with a maximum length of 10 km and width of 2 km. It has a north-east, south-west trend with a long tail on the south. The lagoon area of this island is 17.50 sq km.
+                    In Agatti coral growths and multicoloured coral fishes abound in its lagoons. Fishing is the most important industry of Agatti which is perhaps the only island besides Minicoy getting surplus fish. Next to Fishing, Coir and Copra are the main industries . Agatti is the Air Port stopover from Cochin on the way to Bangaram which can be seen on the northern horizon.
+                </p>
+                
+            </div>
+            <style>
+                .right_image{
+                    position: absolute;
+                    left: 9vw;
+                    height: 43vw;
+                }
+                .left_image{
+                    position: absolute;
+                    left: 5vw;
+                    height: 43vw;
+                }
+            </style>
+
+    <!-- AMINI -->
+            <p class="islands_title reveal " id="amini_title" style="font-family: Silk_Serif;">AMINI</p>
+            <div class="islands_info" id="amini">
+
+                <img class="left_image reveal_left" src="/media/images/amini_image.png" alt="">
+                <p class="para_right reveal_right" id="amini_para" style="font-family: lato;">The Amini Island is at a distance of 407 km (220 nautical miles) from Kochi and located between Kavaratti Island in the south and Kadmat Island in the north. This island has an oval shape with a width of 1.20 km at the broadest point and a length of 2.70 km. It lies between 11o 06′ and 11o 08′ N latitude and 72o 42′ and 72o 45′ E longitude, having a land area of 2.60 sq km and lagoon area of 1.50 sq km.This oval shaped island is 2-3 m above the mean sea level, with a depression at the centre.
+
+                    Corals and sand stone is used for building purpose. Talented craftsmen living here are famous for making walking sticks with tortoise shells and coconut shells.It’s also famous for stone engravers and has a rich tradition of folk songs.The island got its name for the Arabic word ‘Amin’ meaning “faithful”</p>
+            </div>
+
+    <!-- ANDROTT -->
+            <p class="islands_title reveal " id="andrott_title" style="font-family: Silk_Serif;">ANDROTT</p>
+            <div class="islands_info " id="andrott">
+
+                <img class="right_image reveal_right" src="/media/images/andrott_image.png" alt="">
+                <p class="para_left reveal_left" id="andrott_para" style="font-family: lato;">The Andrott Island is the largest island with an area of 4.90 sq km, length of 4.66 km and a maximum width of 1.43 km. It lies in the east-west direction. It is 119 km (64 nautical miles) away from Kavaratti and 293 km (158 nautical miles) away from Kochi. It is the only island having a very small lagoon area .
+
+                    Andrott is the nearest island to the mainland and has an east-west orientation unlike other islands lying in the north-south direction.It is the Largest island in the Lakshadweep. Thick vegetation mainly coconut groves ,add to the beauty of the island. Coir and Copra are the major products of the island.</p>
+            </div>
+
+    <!-- BANGARAM -->
+            <p class="islands_title reveal " id="bangaram_title" style="font-family: Silk_Serif;">BANGARAM</p>
+            <div class="islands_info " id="bangaram">    
+
+                <img class="left_image reveal_left" src="/media/images/bangaram_image.png" alt="">
+                <p class="para_right reveal_right" id="bangaram_para" style="font-family: lato;"> BANGARAM is uninhabited. It is surrounded by a shallow lagoon enclosed by coral reef. Here the sun,sand and surf in harmony casting a spell on the visitor. It offers utmost privacy unpolluted comfort with crystal clear water. Sparkling coral reef and blue lagoon perform magic on the soul searching traveller. Its a place where Hemingway would create a classic or a Van Goph would paint a masterpiece. And who knows the muse may inspire one to create too. A matchless sence of well being takes over and one begins to discover the graceful fishes,porcupines, parrots, pufferfishes, hermit crabs and sea birds on the vast 120 acres of lush coconut groves in BANGARAM. There are numerous adventures like scuba diving, beach games, swimming, snorkelling and deep sea fishing.The resort has 60 bedded beach cottages with a multi cuisine restaurant serving myriad delicacies.</p>
+            </div>
+
+    <!-- BITRA -->
+            <p class="islands_title reveal " id="bitra_title" style="font-family: Silk_Serif;">BITRA</p>
+            <div class="islands_info " id="bitra"> 
+                
+                <img class="right_image reveal_right" src="/media/images/bitra_image.png" alt="">
+                <p class="para_left reveal_left" id="bitra_para" style="font-family: lato;">The Bitra Island is the smallest inhabited island in the territory having a land area of 0.105 sq km. It has a length of 0.57 km and a width of 0.28 km at the broadest point. This is is at a distance of 483 km (261 nautical miles) from Kochi. Though the land area is Small, its lagoon area is 45.61 sq km.
+
+                    BITRA is the smallest inhabited island in the territory. Till 1835 BITRA was the breading ground for a number of sea birds,a favourite hunt of KILTAN and CHETLAT people. The shrine is a place of pilgrimage for the people of other islands.Surprisingly the first permanent settler at BITRA was a women from CHETLAT who with her son set up a permanent settler at house around 1945.</p>
+            </div>
+
+    <!-- CHETLAT -->
+            <p class="islands_title reveal " id="chetlat_title" style="font-family: Silk_Serif;">CHETLAT</p>
+            <div class="islands_info " id="chetlat">  
+
+                <img class="left_image reveal_left" src="/media/images/chetlat_image.png" alt="">
+                <p class="para_right reveal_right" id="chetlat_para" style="font-family: lato;">The Chetlat Island is 56 km on the north of the Amini and 432 km (233 nautical miles) away from Kochi. Along the eastern side of the island, there is a wide belt of coral delta formed by storms, which broadens at the north and covers the whole southern end of the island.
+
+                    CHETLAT is the northern most inhabited island. Coir twisting is thechief occupation of the people here. The coconut yield is poor and income is meagre. Manufacture of mats and weaving of coconut leaves are the spare time industries here. The island suffered a great deal at the hands of the portuguese in the 16th century. Boat building was a flourishing industry at the beginning of the 20th century when all the vessels needed by the Amindivi islanders were built here.</p>
+            </div>   
+
+    <!-- KADMAT -->
+            <p class="islands_title reveal " id="kadmat_title" style="font-family: Silk_Serif;">KADMAT</p>
+            <div class="islands_info " id="kadmat">  
+
+                <img class="right_image reveal_right" src="/media/images/kadmat_image.png" alt="">
+                <p class="para_left reveal_left" id="kadmat_para" style="font-family: lato;">Kadmath is 8 Kms long and 550 metres wide at the broadest point. In addition to the beautiful shallow lagoon on the west that forms an ideal spot for water sports, there is a narrow lagoon on the east. The best attractions are the long sandy beaches and small sand banks on the southern tip for sun baths. Kadmath has been identified for staying tourists with its tourist huts aesthetically situated in the coconut palm groves in the beaches facing the lagoon. The place is ideal for a real holiday that brings you away from the maddening crowd, hustle and bustle of city life.
+                    Water sports crafts like kayaks, pedal boats, sailing yachts, skiing boats and glass bottomed boats are available on hire. The scuba diving centre in the island has become an attraction for water-sport enthusiasts.</p>
+            </div>
+
+    <!-- KALPENI -->
+            <p class="islands_title reveal " id="kalpeni_title" style="font-family: Silk_Serif;">KALPENI</p>
+            <div class="islands_info " id="kalpeni">   
+
+                <img class="left_image reveal_left" src="/media/images/kalpeni_image.png" alt="">
+                <p class="para_right reveal_right" id="kalpeni_para" style="font-family: lato;">The Kalpeni Island is located at a distance of 287 km (155 nautical miles) from Kochi and located south-east of Kavaratti Island and midway between Andrott and Minicoy. It has a very large lagoon measuring about 2.8 km at the point of maximum width. The Island is aligned in the north-south direction.
+                    One of the most beautiful islands of Lakshadweep , the Kalpeni island is situated at a distance of sixty three kilometers from Androth. An important place of tourist destination, Kalpeni offers the tourists with a wonderful opportunity to explore their sporting skills and sportsman spirit through the various water sports of the region.</p>
+            </div>
+
+    <!-- KAVARATTI -->
+            <p class="islands_title reveal " id="kavaratti_title" style="font-family: Silk_Serif;">KAVARATTI</p>
+            <div class="islands_info " id="kavaratti">   
+
+                <img class="right_image reveal_right" src="/media/images/kavaratti_image.png" alt="">
+                <p class="para_left reveal_left" id="kavaratti_para" style="font-family: lato;">The Kavaratti is the capital of the Union Territory Lakshadweep in India. The Island of Kavaratti lies 360Km of the coast of the State of Kerala. is the closest major city on the Indian mainland at a distance of 404 km (218 nmi). It has a lagoon area of 3.46 sq mi. Karavatti has been selected as one of the hundred Indian cities to be developed as asmart city under PM Narendra Modi’s flagship Smart Cities Mission.
+
+                    The Kavaratti Island is the headquarters of the Union Territory of Lakshadweep. This island is at a distance of 404 km (218 nautical miles) from Kochi and is located between Agatti Island on the west and Andrott Island on the east. Maximum length of the island is 5.8 km and width is 1.6 km. It has a lagoon having a length of about 6 km and an area of 4.96 sq km.</p>
+            </div>
+
+    <!-- KILTAN -->
+            <p class="islands_title reveal " id="kiltan_title" style="font-family: Silk_Serif;">KILTAN</p>
+            <div class="islands_info " id="kiltan">    
+
+                <img class="left_image reveal_left" src="/media/images/kiltan_image.png" alt="">
+                <p class="para_right reveal_right" id="kiltan_para" style="font-family: lato;">The Kiltan Island lies 51 km north-east of Amini Island. It has 3.4 km length and 0.6 km width at the broadest point. On the northern and southern ends of the island, there are high storm beaches. This island is 394 km (213 nautical miles) away from Kochi. Its lagoon area is 1.76 sq km.
+
+                    KILTAN lies 51 kms. north-east of AMINI on the international trade route between the Persian Gulf and Sri Lanka.On the northern and southern ends of the island there is a high storm beach.The island is thick in flora and is fertile. The summer nights in KILTAN are warmer and it is usual for the people to sleep outside their homes,on the beaches. KILTAN has a rich tradition of folk dances.</p>
+            </div>
+
+    <!-- MINICOY -->
+            <p class="islands_title reveal " id="minicoy_title" style="font-family: Silk_Serif;">MINICOY</p>
+            <div class="islands_info " id="minicoy">   
+
+                <img class="right_image reveal_right" src="/media/images/minicoy_image.png" alt="">
+                <p class="para_left reveal_left" id="minicoy_para" style="font-family: lato;">The Minicoy Island is the southern-most island of Lakshadweep, situated at a distance of 398 km (215 nautical miles) south-west of Kochi. This island lies near the 9 0 Channel, which is one of the busiest shipping routes and is about 130 km from the northern-most island of Maldives.
+                    The Light house of the island is one of the oldest and was constructed in 1885. You will be taken to the villages, tuna canning factory, the light house and for a long drive through dense coconut groves and winding village roads. The beaches have bathing huts and change rooms; so swim and beach walk , Pedal boat, Kayak and Sail . We provide these on hire. Three tourist cottages and one 20 bedded tourist home have been constructed for the staying tourists. This island is part of Coral Reef and Swaying Palm packages .</p>
+            </div>
+
+    <!-- footer -->
+            <footer class="footer" style="background-color: rgb(223,237,248); background-image: none;">
+                <a href="#"><img style="top:-3vw; height: 12vw; width: 14vw;" class="top_redirect reveal_left" src="/media/icons/island_footer_icon.png" alt="seashells"></a>
+                <div class="footer_social" style="top: -11.1vw;">
+                    <a target="_blank" href="https://www.facebook.com/"><img src="/media/icons/facebook_icon.png" alt="Facebook"></a>
+                    <a target="_blank" href="https://www.instagram.com/"><img src="/media/icons/instagram_icon.png" alt="Instagram"></a>
+                    <a target="_blank" href="https://twitter.com/"><img src="/media/icons/twitter_icon.png" alt="X"></a>
+                    <a target="_blank" href="https://www.youtube.com/"><img src="/media/icons/youtube_icon.png" alt="YouTube"></a>
+                </div>
+                <div class="footer_about" style="top: -8.5vw;">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a id="Newsletter">Newsletter</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a id="contactUs">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer_credits">
+                    <p>&copy;2024 Developed by Uttam M. Dangar MG23045</p>
+                </div>
+            </footer>
+
+        </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="form" method="POST" action="/login">
+        <h2>Sign In</h2>
+        <img id="login_cancel" class="cancel" src="/media/icons/cancel_icon.png" alt="">
+        <input type="text" id="loginUsername" name="email" placeholder="Email" required>
+        <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+        <button type="submit">Sign In</button>
+        <p>Don't have an account? <span id="register_switch" class="switch">Register</span></p>
+    </form>
+
+    <!-- Register Form -->
+    <form id="registerForm" class="form hidden" method="POST" action="/register">
+        <h2>Sign Up</h2>
+        <img id="register_cancel" class="cancel" src="/media/icons/cancel_icon.png" alt="">
+        <input type="text" name="username" id="registerUsername" placeholder="Username" required>
+        <input type="email" name="email" id="registerEmail" placeholder="Email" required>
+        <input type="password" name="password" id="registerPassword" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <span id="login_switch" class="switch">Login</span></p>
+    </form>
+
+    <!-- newsletter popup -->
+    <div class="newsletter_popup" id="newsletter_popup_id">
+        <img id="newsletterimg" src="/media/images/newsletter_image.png" alt="newsletter">
+        <div class="newsletter_container">
+            <p id="newsletter_txt1">Subscribe to our Newsletter!</p>
+            <p id="newsletter_txt2">Subscribe to our Newsletter and stay updated.</p>
+            <img class="cancel_icon" src="/media/icons/cancel_icon.png" alt="cancel">
+            <form class="newsletter-form" action="/addNewsletter" method="post">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <input type="submit" value="Subscribe">
+            </form>
+        </div>
+    </div>
+
+    <!-- contactUs popup -->
+    <div class="contact_popup" id="contact_popup_id">
+        <img id="contactUsimg" src="/media/images/contactUs_image.png" alt="contactUs">
+        <div class="contact_container">
+            <h1>Contact Us</h1>
+            <form action="/contactus" method="POST">
+                <img class="cancel_icon1" src="/media/icons/cancel_icon.png" alt="cancel">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+              
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <input type="submit" value="Send Message">
+              </form>              
+        </div>
+    </div>
+ 
+    <style>
+        .islands_whole_body{
+            position: relative;
+            height: 684vw;
+            width: 100%;
+        }
+        .island_body{
+            position: relative;
+            height: 684vw;
+            width: 100%;
+        }
+    
+        .islands_title{
+            position: relative;
+            text-align: center;
+            color: #3f3f3f;
+            background-color: white;
+            top: 5vw;
+            left: 9.5vw;
+            width: 81vw;
+            letter-spacing: 0.1vw;
+            font-size: 4vw;
+            text-transform: uppercase;
+            font-weight: 10;
+            box-shadow: 0 0 7px 7px rgb(199, 199, 199, 0.71);
+        }
+        .islands_info{
+            position: relative;
+            height: 47vw;
+            width: 91vw;
+            top: 4.4vw;
+            left: 4.7vw;
+            background-size: cover;
+        }
+        .para_left{
+            position: relative;
+            height: 19vw;
+            width: 35vw;
+            left: 6vw;
+            top: 7vw;
+            color: rgb(0, 0, 0,0.81);
+            text-align: justify;
+            font-size: 1.2vw;
+            font-weight: 370;
+            line-height: 3vw;
+        }
+        .para_right{
+            position: relative;
+            height: 21vw;
+            width: 37vw;
+            top: 7vw;
+            left: 47vw;
+            color: rgb(0, 0, 0,0.81);
+            text-align: justify;
+            font-size: 1.2vw;
+            font-weight: 370;
+            line-height: 3vw;
+        }
+    </style>
+</body>
+</html>
